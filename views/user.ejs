@@ -1,0 +1,62 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <header>
+        <img src="images/booktitle.jpeg" alt="Food" width="85">
+        <h2>The Story Keeper</h2>
+    </header>
+    <%- include('layouts/nav'); -%>
+    <section>
+        <form name="myform" method="Post" onsubmit="return formSubmit();" action="">
+            <label>User Name</label>
+            <input id="name" placeholder="Username" type="text" name="name"><br />
+
+            <label>Email</label>
+            <input id="email" placeholder="email@domain.com" type="email" name="email"><br />
+
+            <label>Password:</label>
+            <input type="password" name="password"><br />
+            
+            <label>Phone</label>
+            <input id="phone" placeholder="123-123-1234" type="phone" name="phone"><br />
+
+            <label>Post Code</label>
+            <input id="postcode" placeholder="X9X 9X9" type="postcode" name="postcode"><br />
+
+            <label>Address</label>
+            <input id="address" placeholder="Home Address" type="address" name="address"><br />
+
+            <label>Country</label>
+            <input id="country" placeholder="Country" type="country" name="country"><br />
+
+            <label>Province</label>
+            <select name="province" id="province">
+                <option value="">----- Select -----</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Alberta">Alberta</option>
+            </select><br>
+
+            <label>Are you Admin?</label>
+            <select name="isadmin" id="province">
+                <option value="">----- Select -----</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit"><br>
+            <p id="errors">
+                <%
+                    if(typeof errors !== 'undefined'){
+                        for(var error of errors){
+                        %>
+            <%=error.msg%> <br>
+            <%
+                    }
+                }
+                %>
+            </p>
+            </form>
+            </section>
+</body>
+<%- include('layouts/footer'); -%>

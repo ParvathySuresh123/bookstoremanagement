@@ -1,0 +1,51 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <header>
+        <img src="../images/booktitle.jpeg" alt="Book" width="85">
+        <h2>The Story Keeper</h2>
+    </header>
+    <%- include('layouts/adminnav'); -%>
+    <section>
+          <form name="myform" method="Post" onsubmit="return formSubmit();" action="" enctype="multipart/form-data">
+            <label>Book Name:</label>
+            <input id="bookName" type="text" name="bookName"><br />
+
+            <label>Author Name:</label>
+            <input id="authorName" type="text" name="authorName"><br />
+      
+            <label for="image">Book Image:</label>
+            <input type="file" id="image" name="image"><br />
+
+            <label>Price:</label>
+            <input id="price" type="text" name="price"><br />
+
+            <label>Quantity:</label>
+            <input id="quantity" type="text" name="quantity"><br />
+
+            <label>Book Description:</label><br>
+            <textarea name="description" id="description" rows="10" cols="80">
+             Enter your text here !!!
+          </textarea>
+            <script>
+              CKEDITOR.replace('description');
+            </script>
+            <br><br>
+            <input type="submit" value="Submit">
+            <p id="errors">
+              <%
+                if(typeof(errors) != 'undefined'){
+                  for(var error of errors){
+                  %>
+            <p class="errors"><%= error.msg %></p>
+            <%
+                  }
+                }
+              %>
+            </p>
+          </form>
+        </section>
+        <div class="clear"></div>
+      </body>
+      <%- include('layouts/footer'); -%>
+      

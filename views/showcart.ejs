@@ -1,0 +1,38 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/titleheader'); -%>
+    <%- include('layouts/nav'); -%>
+    <section>
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    for(var cart of carts){
+                        %>
+                <tr>
+                    <td><%= cart.bookName %></td>
+                    <td><%= cart.quantity %></td>
+                    <td>$<%= cart.price %></td>
+                    <td><a href="/deletecart/<%= cart._id%>"  onclick="return confirm('Are you sure want to delete?');"><i class='fas fa-trash' style='font-size:36px;color:red'></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </table>
+        <div id="total">
+            <b>Total Price :$<%= total %></b>
+        </div>
+        <a id="add" href="/">Cancel</a>
+        <div class="b"><a id="add" href="/payment">Checkout</a></div>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>

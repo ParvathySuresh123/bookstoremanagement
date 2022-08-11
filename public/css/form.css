@@ -1,0 +1,437 @@
+body{
+    font-family: 'Kalam', cursive;
+    font-size: 20px;
+    width: 960px;
+    margin: 50px auto;
+    background-image: linear-gradient(rgba(300, 300, 300, 0.75), rgba(300, 300, 300, 0.5)), url(../images/bookbackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+.w50{
+    width: 50%;
+    float: left;
+    margin: 1%;
+}
+.clear{
+    clear: both;
+}
+#errors{
+    color: rgb(17, 16, 16);
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+
+}
+form, .formData{
+    width: 450px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #2c2c2c;
+    padding: 30px;
+    margin: 50px auto;
+    color: rgb(10, 9, 9);
+    background-color: #91c0d3;
+    border-radius: 20px;
+}
+label{
+    width: 170px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(22, 21, 21);
+}
+input:not([type="radio"]), select{
+    font-size: 16px;
+    font-family: 'Kalam', cursive;
+    padding: 5px 10px;
+}
+input:not([type="radio"]){
+    width: 170px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+select{
+    width: 190px;
+    margin-top: 10px;
+}
+input[type="submit"]{
+    width: 100%;
+    font-size: 25px;
+    background-color: #943979;
+    color: rgb(223, 210, 210);
+    font-family: 'Kalam', cursive;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 4px 4px 0px #615960;
+    border-radius: 8px;
+}
+input[type="submit"]:active{
+    box-shadow: -4px -4px 0px #615860;
+}
+#edit{
+    width: 100%;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #943979;
+    color: rgb(223, 210, 210);
+    font-family: 'Kalam', cursive;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 4px 4px 0px #615960;
+    border-radius: 8px;
+}
+div.b {
+    position: relative;
+    left: 900px;
+  } 
+#add{
+    width: 100%;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #943979;
+    color: rgb(223, 210, 210);
+    font-family: 'Kalam', cursive;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 4px 4px 0px #615960;
+    border-radius: 8px;
+}
+
+.top_menu{
+    background-color: #d481c9;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #2c2c2c;
+    color: rgb(15, 15, 15);
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+.top_menu ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+}
+
+.top_menu ul li{
+    display: inline-block;
+    width: 130px;
+}
+
+.top_menu ul li:hover{
+    background-color: #a0d8ee;
+}
+.top_menu ul li a{
+    color: rgb(34, 33, 33);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+table.table1{
+    border: 2px solid #6e0360;
+    border-collapse: collapse;
+    margin: 70px auto;
+    color: rgb(31, 26, 26);
+}
+
+table.table1 td{
+    background-color:white;
+    border: 2px solid #6e0360;
+    padding: 12px 15px;
+    color: #6e0360;
+    font-weight: bold;
+}
+
+table.table1 th{
+    border: 2px solid #6e0360;
+    padding: 12px 15px;
+    font-weight: bold;
+    background-color: #daa1d28c;
+    color: rgb(36, 33, 33);
+    text-align: center;
+}
+/* Header */
+header img { 
+	float: left; 
+	padding-right: 15px;  
+} 
+header h2 {
+	font-size: 250%;
+    color: rgb(5, 53, 35);
+}
+#tagline{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: darkblue;
+}
+footer {
+    margin-bottom: 30px;
+    padding-top: 300px;
+    text-align: center;
+    font-size: 0.8em;
+}
+.admin h1{
+    text-align: center;
+    color: darkblue;
+    padding-top: 90px;
+}
+.detail h1{
+    text-align: center;
+    color: darkblue;
+    padding-top: 10px;
+    font-size: 50px;
+}
+.detail img{
+    width:450px; 
+    height:250px;
+    padding-left: 270px;
+    
+}
+.welcome img{
+    padding-left: 70px;
+}
+.detail p{
+    text-align: center;
+}
+.welcome h3{ 
+   text-align: center;
+}
+.welcome p{ 
+    text-align: center;
+ }
+ .welcome h2{ 
+    text-align: center;
+ }
+ #userTag{
+    padding-left: 200px;
+ }
+ /* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Add a color to the cancel button */
+  .cancelbtn {
+    background-color: #ccc;
+    color: black;
+    height: 50px;
+  }
+  
+  /* Add a color to the delete button */
+  .deletebtn {
+    background-color: #f44336;
+  }
+  
+  /* Add padding and center-align text to the container */
+  .container {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 50%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Change styles for cancel button and delete button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .deletebtn {
+       width: 50%;
+    }
+  }
+  .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  form.example{
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+    margin:  auto;
+    color: rgb(10, 9, 9);
+    background-color: rgb(234, 237, 247);
+    border-radius: 0px;
+  }
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    width: 10%;
+    height: 53px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  #total{
+    text-align:center;
+    font-weight:bold;
+    font-size:35px;
+    padding-top:30px;
+  }
+  form.cart{
+    width: 850px;
+    border: none;
+    margin-left: 25px;
+    box-shadow: none;
+    color: rgb(10, 9, 9);
+    background-image: linear-gradient(rgba(300, 300, 300, 0.5), rgba(300, 300, 300, 0.5)), url(../images/bookbackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+    border-radius: 0px;
+  }
+  form.cart input[type=text] {
+
+    font-size: 17px;
+    background: #f1f1f1;
+  }
+  
+  form.cart button {
+    height: 53px;
+    background: #bed2e5;
+    color: white;
+    font-size: 17px;
+    width: 50px;
+    border: 1px solid #bed2e5;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.cart button:hover {
+    background: #0b7dda;
+  }
+  
+  form.cart::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

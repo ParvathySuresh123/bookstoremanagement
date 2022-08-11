@@ -1,0 +1,57 @@
+
+<%- include('layouts/header'); -%>
+<body>
+  <header>
+    <img src="../images/booktitle.jpeg" alt="Book" width="85">
+    <h2>The Story Keeper</h2>
+</header>
+  <%- include('layouts/nav'); -%>
+  <section>
+    <form name="myform" method="Post" action="" onsubmit="return formSubmit();">
+    
+      <label>Name</label>
+      <input id="name" type="text" name="name" value="<%= user.name %>"><br />
+
+      <label>Email</label>
+      <input id="email"  type="email" name="email" value="<%= user.email %>"><br />
+      
+      <label>Phone</label>
+      <input id="phone" value="<%= user.phone %>" type="phone" name="phone"><br />
+
+      <label>Shipping Address</label>
+      <input id="address" value="<%= user.address %>,<%= user.postcode %>,<%= user.province %>,<%= user.country %>" 
+      type="address" name="address" style="height:60px;"><br />
+      
+      <label>Price</label>
+      <input id="total" type="text" name="total" value="<%= total %>" readonly disabled><br />
+
+      <label>Credit Card Number</label>
+        <!--text input for the credit card information -->
+        <input id="creditcard" placeholder="xxxx-xxxx-xxxx-xxxx" type="text" name="creditcard"><br />
+
+        <label>Credit Card Expiry Month</label>
+        <!--text input for the credit card expiry month information -->
+        <input id="expmonth" placeholder="MMM" type="text" name="expmonth"><br />
+
+        <label>Credit Card Expiry Year</label>
+        <!--text input for the credit card expiry year information -->
+        <input id="expyear" placeholder="yyyy" type="text" name="expyear"><br />
+
+      <br /><br />
+
+      <input type="submit" value="Proceed to Pay">
+      <p id="errors">
+        <%
+                if(typeof(errors) != 'undefined'){
+                  for(var error of errors){
+                  %>
+      <p class="errors"><%= error.msg %></p>
+      <%
+                  }
+                }
+              %>
+      </p>
+    </form>
+  </section>
+</body>
+<%- include('layouts/footer'); -%>

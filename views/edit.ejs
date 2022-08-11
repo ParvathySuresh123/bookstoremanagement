@@ -1,0 +1,63 @@
+
+<%- include('layouts/header'); -%>
+
+<body>
+  <header>
+    <img src="../images/booktitle.jpeg" alt="Book" width="85">
+    <h2>The Story Keeper</h2>
+</header>
+  <%- include('layouts/nav'); -%>
+  <section>
+    <form name="myform" method="Post" action="">
+    
+      <label>User Name</label>
+      <input id="name" type="text" name="name" value="<%= user.name %>"><br />
+
+      <label>Email</label>
+      <input id="email"  type="email" name="email" value="<%= user.email %>"><br />
+      
+      <label>Phone</label>
+      <input id="phone" value="<%= user.phone %>" type="phone" name="phone"><br />
+
+      <label>Post Code</label>
+      <input id="postcode" value="<%= user.postcode %>" type="postcode" name="postcode"><br />
+
+      <label>Address</label>
+      <input id="address" value="<%= user.address %>" type="address" name="address"><br />
+
+      <label>Country</label>
+      <input id="country" value="<%= user.country %>" type="country" name="country"><br />
+
+      <label>Province</label>
+      <select name="province" id="province">
+          <option value="<%= user.province %>"><%= user.province %></option>
+          <option value="Ontario">Ontario</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Alberta">Alberta</option>
+      </select><br>
+
+      <label>Are you Admin?</label>
+      <select name="isadmin" id="province">
+          <option value="<%= user.isadmin %>"><%= user.isadmin %></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select><br><br>
+
+      <br /><br />
+
+      <input type="submit" value="Submit">
+      <p id="errors">
+        <%
+                if(typeof(errors) != 'undefined'){
+                  for(var error of errors){
+                  %>
+      <p class="errors"><%= error.msg %></p>
+      <%
+                  }
+                }
+              %>
+      </p>
+    </form>
+  </section>
+</body>
+<%- include('layouts/footer'); -%>

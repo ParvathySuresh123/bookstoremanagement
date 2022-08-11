@@ -1,0 +1,52 @@
+<%- include('layouts/header'); -%>
+
+<body>
+<header>
+    <img src="../images/booktitle.jpeg" alt="Food" width="85">
+    <h2>The Story Keeper</h2>
+</header>
+  <%- include('layouts/nav'); -%>
+    <section class="detail">
+      <form name="myform" method="Post" onsubmit="return formSubmit();" action="">
+        <label>User Name :</label>
+        <label><%= user.name %></label>
+
+        <label>Email :</label>
+        <label><%= user.email %></label><br>
+        
+        <label>Phone :</label>
+        <label><%= user.phone %></label><br>
+
+        <label>Post Code :</label>
+        <label><%= user.postcode%></label><br>
+
+        <label>Address :</label>
+        <label><%= user.address %></label><br>
+
+        <label>Country :</label>
+        <label><%= user.country %></label>
+        <br />
+
+        <label>Province :</label>
+        <label><%= user.province %></label><br>
+
+
+        <label>Are you Admin?</label>
+        <label><%= user.isadmin %></label><br><br>
+
+        <a id="edit" href="/edit/<%= user._id%>">Edit User</a><br>
+        <p id="errors">
+            <%
+                if(typeof errors !== 'undefined'){
+                    for(var error of errors){
+                    %>
+        <%=error.msg%> <br>
+        <%
+                }
+            }
+            %>
+        </p>
+        </form>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>

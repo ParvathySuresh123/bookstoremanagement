@@ -1,0 +1,32 @@
+<nav class="top_menu">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+    <% if(typeof(userLoggedIn) != 'undefined' && userLoggedIn){%>
+    <li>
+      <a href="/logout">Log Out</a>
+    </li>
+    <%}else{%>
+    <li>
+      <a href="/login">Log In</a>
+    </li>
+    <%}%>
+    <%if(typeof(userLoggedIn) != 'undefined' && userLoggedIn){%>
+      <li>
+        <a href="/viewcart"><i class='fas fa-shopping-bag' style='font-size:35px;color:rgb(14, 13, 13)'></i></a>
+      </li>
+      <%}%>
+    <% if(typeof(user) != 'undefined'){%>
+      <li>
+        <a href="/userdetail/<%= user._id%>"><%= user.name %></a>
+      </li>
+      <%}%>
+  </ul>
+</nav>

@@ -1,0 +1,28 @@
+{
+  "name": "nutritiousdiet",
+  "version": "1.0.0",
+  "description": "Content Management website",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "ckeditor4": "^4.16.2",
+    "ckeditor4-angular": "^2.2.2",
+    "connect-flash": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-fileupload": "^1.2.1",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongoose": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awesome"
+  ],
+  "author": "Parvathy Suresh",
+  "license": "ISC"
+}

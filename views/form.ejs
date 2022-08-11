@@ -1,0 +1,61 @@
+<%- include('layouts/header'); -%>
+
+<body>
+  <script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+    </script>
+  <%- include('layouts/titleheader'); -%>
+  <%- include('layouts/nav'); -%>
+  <section class="welcome"><br>
+    <form class="example" method="Post" onsubmit="return formSubmit();" action="">
+      <input type="text" placeholder="Search.." name="search" id="search">
+      <button type="submit"><i class="fa fa-search" ></i></button>
+    </form>
+    <table class="home">
+      <tbody>
+          <%
+              for(var book of books){
+                  %>
+          <tr>
+              <td><% if(typeof(book.imageName) != 'undefined'){%>
+                  <img src="../uploads/<%= book.imageName %>" alt="<%= book.bookName %>" height="250px" width="300px">
+                  <%}%>
+              </td>
+              <td style="padding-left: 50px;padding-top: 100px;padding-bottom: 60px;"><br>
+                <b style="font-size: 35px;"><%= book.bookName %></b><br>
+              <i style="font-size: 28px;">by</i><b style="font-size: 30px;">  <%= book.authorName %><br></b>  
+                $<%= book.price %><br>
+                <% if(book.quantity > 0){%>
+                  <i class="fas fa-check" style="color: green;"></i> In Stock
+                  <br>
+                <%}else{%>
+                  <i class="fas fa-times" style="color: rgb(236, 48, 15);"></i> Sold out
+                  <br>
+                  <%}%>
+              <a href="/bookdetails/<%= book._id%>">View more details..</a>
+              <% if(typeof(userLoggedIn) != 'undefined' && userLoggedIn&&(book.quantity > 0)){%>
+              <a href="/editcart/<%= book._id%>" style="padding-left: 500px;"><i class="fas fa-shopping-cart" style="font-size: 36px;"></i></a>
+              <%}else if(book.quantity <= 0){%>
+                <i class="fas fa-shopping-cart" style="font-size: 36px;color: rgb(165, 114, 165);padding-left: 500px;" aria-readonly="true" aria-disabled="true"></i>
+                
+              <%}else{%>
+                <div class="popup" onclick="myFunction()" style="padding-left: 500px;"><i class="fas fa-shopping-cart" style="font-size: 36px;color: rgb(196, 21, 196);"></i>
+                  <span class="popuptext" id="myPopup" style="margin-left: 250px;">Please login to add cart</span>
+                </div>
+                <%}%>
+              </td>
+            </tr>
+          <%
+              }
+          %>
+      </tbody>
+  </table>
+</form>
+  </section>
+  <div class="clear"></div>
+</body>
+<%- include('layouts/footer'); -%>

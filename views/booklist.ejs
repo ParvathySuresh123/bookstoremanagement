@@ -1,0 +1,43 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/titleheader'); -%>
+    <%- include('layouts/adminnav'); -%>
+    <section>
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>Book Image</th>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    for(var book of books){
+                        %>
+                <tr>
+                    <td><% if(typeof(book.imageName) != 'undefined'){%>
+                        <img src="../uploads/<%= book.imageName %>" alt="<%= book.bookName %>" height="150px" width="150px">
+                        <%}%>
+                    </td>
+                    <td><%= book.bookName %></td>
+                    <td><%= book.authorName %></td>
+                    <td>$<%= book.price %></td>
+                    <td><%= book.quantity %></td>
+                    <td><a href="/editbook/<%= book._id%>"><i class='fas fa-edit' style='font-size:36px'></i></a></td>
+                    <td><a href="/deletebook/<%= book._id%>"  onclick="return confirm('Are you sure want to delete?');"><i class='fas fa-trash' style='font-size:36px;color:red'></i></a></td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </table>
+        <div class="b"><a id="add" href="/addbook">Add Book</a></div>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>

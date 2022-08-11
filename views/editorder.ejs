@@ -1,0 +1,39 @@
+<%- include('layouts/header'); -%>
+
+<body>
+  <header>
+    <img src="../images/booktitle.jpeg" alt="Food" width="85">
+    <h2>The Story Keeper</h2>
+  </header>
+  <%- include('layouts/adminnav'); -%>
+  <section>
+    <form name="myform" method="Post" action="">
+
+      <label>Book Id:</label>
+      <input id="bookId" type="text" name="bookId" value="<%= order.bookId %>" readonly disabled><br />
+
+      <label>User Id:</label>
+      <input id="userId" type="text" name="userId" value="<%= order.userId %>" readonly disabled><br />
+
+      <label>Price:</label>
+      <input id="price" type="text" name="price" value="<%= order.price %>"><br />
+
+      <label>Quantity:</label>
+      <input id="quantity" type="text" name="quantity" value="<%= order.quantity %>"><br />
+
+      <input type="submit" value="Submit">
+      <p id="errors">
+        <%
+                    if(typeof(errors) != 'undefined'){
+                      for(var error of errors){
+                      %>
+      <p class="errors"><%= error.msg %></p>
+      <%
+                      }
+                    }
+                  %>
+      </p>
+    </form>
+  </section>
+</body>
+<%- include('layouts/footer'); -%>

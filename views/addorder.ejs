@@ -1,0 +1,39 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <header>
+        <img src="../images/booktitle.jpeg" alt="Book" width="85">
+        <h2>The Story Keeper</h2>
+    </header>
+    <%- include('layouts/adminnav'); -%>
+    <section>
+        <form name="myform" method="Post" onsubmit="return formSubmit();" action="">
+            <label>Book Id</label>
+            <input id="bookId" placeholder="Book Id" type="text" name="bookId"><br />
+
+            <label>User Id</label>
+            <input id="userId" placeholder="User Id" type="text" name="userId"><br />
+
+            <label>Price:</label>
+            <input id="price" placeholder="123" type="text" name="price"><br />
+            
+            <label>Quantity</label>
+            <input id="quantity" placeholder="123" type="text" name="quantity"><br />
+
+
+            <input type="submit" value="Submit"><br>
+            <p id="errors">
+                <%
+                    if(typeof errors !== 'undefined'){
+                        for(var error of errors){
+                        %>
+            <%=error.msg%> <br>
+            <%
+                    }
+                }
+                %>
+            </p>
+            </form>
+            </section>
+</body>
+<%- include('layouts/footer'); -%>

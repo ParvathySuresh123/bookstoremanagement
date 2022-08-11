@@ -1,0 +1,26 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/titleheader'); -%>
+    <%- include('layouts/nav'); -%>
+    <section>
+        <form name="myform" method="Post" action="">
+            <label>Username:</label>
+            <input type="text" name="username"><br />
+            <label>Password:</label>
+            <input type="password" name="password"><br />
+            <input type="submit" value="Login">
+            <a id="userTag" href="/user">New User?</a>
+            <p id="errors">
+                <%
+                    if(typeof error !== 'undefined'){
+                        %>
+            <%=error%>
+            <%
+                    }
+                %>
+            </p>
+            </form>
+            </section>
+</body>
+<%- include('layouts/footer'); -%>

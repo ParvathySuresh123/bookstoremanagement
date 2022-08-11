@@ -1,0 +1,30 @@
+<nav class="top_menu">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/booklist">Books</a>
+    </li>
+    <li>
+      <a href="/orderlist">Orders</a>
+    </li>
+    <li>
+        <a href="/userlist">Users</a>
+      </li>
+    <% if(typeof(userLoggedIn) != 'undefined' && userLoggedIn){%>
+    <li>
+      <a href="/logout">Log Out</a>
+    </li>
+    <%}else{%>
+    <li>
+      <a href="/login">Log In</a>
+    </li>
+    <%}%>
+    <% if(typeof(user) != 'undefined'){%>
+      <li>
+        <a href="/userdetail/<%= user._id%>">Admin</a>
+      </li>
+      <%}%>
+  </ul>
+</nav>
